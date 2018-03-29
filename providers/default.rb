@@ -57,7 +57,7 @@ action :create do
     owner 'root'
     group 'root'
     mode 00644
-    notifies :reload, 'service[haproxy]'
+    notifies :restart, 'service[haproxy]'
     variables(:config => new_resource.config)
   end
 
